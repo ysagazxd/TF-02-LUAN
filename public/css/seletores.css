@@ -1,0 +1,95 @@
+.content ul.demo {
+    list-style: none;
+    margin: 0;
+}
+
+.content ul.demo>li {
+    border-left: 2px solid transparent;
+    background-color: #F0F0F0;
+    padding: 8px;
+    margin-bottom: 2px;
+}
+
+/** CODAR SELETORES **/
+
+/* EX 1 - li com classe exemplo - fundo amarelo */
+.content ul.demo>li.exemplo {
+    background-color: yellow;
+}
+
+/* EX 2 - li com id unico - texto vermelho */
+.content ul.demo>li#unico {
+    color: red;
+}
+
+/* EX 3 - li com data-type="attr" - sublinhado */
+.content ul.demo>li[data-type="attr"] {
+    text-decoration: underline;
+}
+
+/* EX 4 - li com data-role contendo "user" - texto em itálico */
+.content ul.demo>li[data-role~="user"] {
+    font-style: italic;
+}
+
+/* EX 5 - primeiro li (:first-child) - aumentar fonte */
+.content ul.demo>li:first-child {
+    font-size: 1.2em;
+}
+
+/* EX 6 - último li (:last-child) - borda azul */
+.content ul.demo>li:last-child {
+    border: 2px solid blue;
+}
+
+/* EX 7 - li com classe ativo - fundo cinza */
+.content ul.demo>li.ativo {
+    background-color: gray;
+}
+
+/* EX 8 - span dentro de li - negrito */
+.content ul.demo>li span {
+    font-weight: bold;
+}
+
+/* EX 9 - li com classes especial e destaque - maiúsculas */
+.content ul.demo>li.especial.destaque {
+    text-transform: uppercase;
+}
+
+/* EX 10 - li com lang="pt-br" - texto verde */
+.content ul.demo>li[lang="pt-br"] {
+    color: green;
+}
+
+/* EX 11 - li com title começando com "começa" - itálico */
+.content ul.demo>li[title^="começa"] {
+    font-style: italic;
+}
+
+/* EX 12 - li com title terminando com "com" - fundo rosa */
+.content ul.demo>li[title$="com"] {
+    background-color: pink;
+}
+
+/* CLASSE SELECTED - deve vir depois para sobrescrever */
+.content ul.demo>li.selected {
+    border-left: 2px solid #000;
+    background-color: #00FF00 !important;
+}
+
+/* PARTE 2 - RESPONSIVIDADE */
+@media (max-width: 767px) {
+    main {
+        flex-direction: column;
+    }
+    
+    aside {
+        width: 100%;
+        order: 2;
+    }
+    
+    .content {
+        order: 1;
+    }
+}
